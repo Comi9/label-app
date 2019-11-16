@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import Label from 'components/Label'
-import Tools from 'components/Tools'
+import LabelContainer from 'containers/LabelContainer'
+import ToolsContainer from 'containers/ToolsContainer'
 
 export default class App extends Component {
   render() {
     return (
       <div className='container'>
         <div className='canvas'>
-          <Label />
+          <LabelContainer />
         </div>
         <div className='tools'>
-          <Tools />
+          <ToolsContainer />
         </div>
       </div>
     )

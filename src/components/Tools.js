@@ -13,8 +13,13 @@ export default class Tools extends Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.date !== prevState.date) {
+      this.props.actions.setDate(this.state.date)
+    }
+  }
+
   render() {
-    console.log(moment(this.state.date).format('MMMM'))
     return (
       <div className='tools'>
         <SingleDatePicker

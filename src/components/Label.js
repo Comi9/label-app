@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
+import moment from 'moment'
 
 export default class Label extends Component {
   render() {
+    const { date = moment() } = this.props
+    const dayName = date.format('dddd')
+    const year = date.format('YYYY')
+    const month = date.format('MMMM')
+    const day = date.format('D')
+
     return (
       <div className='label'>
         <div className='content'>
-          <div className='day'>LUNI</div>
-          <div className='date'>21</div>
-          <div className='monthAndYear'><span className='month'>IANUARIE</span> <span className='year'>2020</span></div>
+          <div className='day'>{dayName.toUpperCase()}</div>
+          <div className='date'>{day}</div>
+          <div className='monthAndYear'><span className='month'>{month.toUpperCase()}</span> <span className='year'>{year}</span></div>
           <div className='time'><div className='timeIcon'><img src='assets/images/time.svg' alt='time' /></div> 19:00</div>
           <div className='location'>
             <div className='locationIcon'><img src='assets/images/location.svg' alt='location' /></div>
