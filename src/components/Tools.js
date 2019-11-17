@@ -1,35 +1,21 @@
 import React, { Component } from 'react'
-import 'react-dates/initialize'
-import { SingleDatePicker } from 'react-dates'
-import moment from 'moment'
+import Calendar from 'components/Calendar'
+import Time from 'components/Time'
 
 export default class Tools extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
-    this.state = {
-      focused: false,
-      date: moment()
-    }
+    this.state = {}
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.date !== prevState.date) {
-      this.props.actions.setDate(this.state.date)
-    }
-  }
 
   render() {
     return (
-      <div className='tools'>
-        <SingleDatePicker
-          block
-          numberOfMonths={1}
-          onDateChange={date => this.setState({ date })}
-          onFocusChange={({ focused }) => this.setState({ focused })}
-          focused={this.state.focused}
-          date={this.state.date} />
-      </div>
+      <>
+        <Calendar {...this.props} />
+        <Time {...this.props} />
+      </>
     )
   }
 }
