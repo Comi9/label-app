@@ -5,8 +5,6 @@ import moment from 'moment'
 import MomentLocaleUtils from 'react-day-picker/moment'
 
 import { calendarShortcuts } from 'addons/calendar'
-import 'moment/locale/de'
-import 'moment/locale/ro'
 
 export default class Calendar extends Component {
   constructor(props) {
@@ -16,11 +14,12 @@ export default class Calendar extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.selectedDate !== prevState.selectedDate) this.props.actions.setDate(this.state.selectedDate)
-    if (this.props.language !== prevProps.language) {
-      this.setState({ language: this.props.language })
-      moment.locale(this.state.language)
-    }
+    if (this.state.selectedDate !== prevState.selectedDate
+      || this.props.language !== prevProps.language) {
+        this.props.actions.setDate(this.state.selectedDate)
+        this.setState({ language: this.props.language })
+        moment.locale(this.state.language)
+      }
   }
 
   render() {

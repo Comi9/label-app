@@ -1,4 +1,6 @@
 import moment from 'moment'
+import 'moment/locale/de'
+import 'moment/locale/ro'
 import { DEFAULT_LANGUAGE } from 'addons/languages'
 import { DEFAULT_DATE } from 'addons/calendar'
 
@@ -11,7 +13,7 @@ function appReducer(state = initialState, action) {
   switch(action.type) {
     case 'SET_LANGUAGE_REQUESTED':
       return { ...state }
-
+    
     case 'SWITCH_LANGUAGE_REQUESTED':
       return { ...state, language: action.payload }
   
@@ -19,8 +21,8 @@ function appReducer(state = initialState, action) {
       return { ...state }
 
     case 'SET_DATE_REQUESTED':
-        if (!moment(action.payload).isValid()) return { ...state }
-        return { ...state, date: moment(action.payload).locale(state.language) }
+      if (!moment(action.payload).isValid()) return { ...state }
+      return { ...state, date: moment(action.payload).locale(state.language) }
 
     default:
       return state

@@ -16,7 +16,9 @@ export default class Time extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.selectedDate !== prevState.selectedDate) this.props.actions.setDate(this.state.selectedDate)
+    if (this.state.selectedDate !== prevState.selectedDate
+      || this.props.language !== prevProps.language)
+      this.props.actions.setDate(this.state.selectedDate)
   }
 
   handlePresetTime(time) {
