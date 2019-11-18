@@ -16,9 +16,7 @@ export default class Time extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.selectedDate !== prevState.selectedDate) {
-      this.props.actions.setDate(this.state.selectedDate)
-    }
+    if (this.state.selectedDate !== prevState.selectedDate) this.props.actions.setDate(this.state.selectedDate)
   }
 
   handlePresetTime(time) {
@@ -33,13 +31,7 @@ export default class Time extends Component {
         <div className='time-presets-wrapper'>
           <div className='time-presets'>
             <ButtonGroup>
-              {_.map(this.state.timePresets, t => {
-                return(
-                  <Button key={t} onClick={() => this.handlePresetTime(t)}>
-                    <span className={moment(this.props.date).hour().toString() === t.substring(0, 2) ? '' : 'bp3-text-muted'}>{t}</span>
-                  </Button>
-                )
-              })}
+              {_.map(this.state.timePresets, t => <Button key={t} onClick={() => this.handlePresetTime(t)} className={moment(this.props.date).hour().toString() === t.substring(0, 2) ? '' : 'bp3-active'}>{t}</Button>)}
             </ButtonGroup>
           </div>
           <div className='time-presets'>
@@ -49,8 +41,6 @@ export default class Time extends Component {
               showArrowButtons />
           </div>
         </div>
-        
-
       </section>
     )
   }

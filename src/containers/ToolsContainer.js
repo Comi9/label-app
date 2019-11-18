@@ -1,14 +1,17 @@
 import { connect } from 'react-redux'
-import * as labelActions from 'actions/labelActions'
+import * as appActions from 'actions/appActions'
 import Tools from 'components/Tools'
 
 const mapStateToProps = state => ({
-  date: state.date
+  language: state.app.language,
+  date: state.app.date
 })
 
 const mapDispatchToProps = dispatch => ({
   actions: {
-    setDate: date => dispatch(labelActions.setDate(date))
+    setLanguage: () => dispatch(appActions.setLanguage()),
+    switchLanguage: language => dispatch(appActions.switchLanguage(language)),
+    setDate: date => dispatch(appActions.setDate(date))
   }
 })
 
