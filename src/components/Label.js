@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { withTranslation } from 'react-i18next'
 
-export default class Label extends Component {
+class Label extends Component {
   render() {
+    const { t } = this.props
     const { date } = this.props
     const dayName = date.format('dddd')
     const year = date.format('YYYY')
@@ -9,7 +11,9 @@ export default class Label extends Component {
     const day = date.format('D')
     const time = date.format('H:mm')
     const isSunday = date.day() === 0
-    const { alias, hall, address } = this.props.location
+    const alias = t(`labelsApp.availableLocations.${[this.props.location.alias]}.alias`)
+    const hall = t(`labelsApp.availableLocations.${[this.props.location.alias]}.hall`)
+    const address = t(`labelsApp.availableLocations.${[this.props.location.alias]}.address`)
 
     return (
       <div className='label'>
@@ -39,3 +43,5 @@ export default class Label extends Component {
     )
   }
 }
+
+export default withTranslation()(Label)
