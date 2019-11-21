@@ -1,5 +1,9 @@
 export const translationEN = {
   labelsApp: {
-    'title': 'Labels',
+    title: 'Labels',
+    toolsHeaders: {
+      date: 'Date',
+      time: 'Time'
+    }
   }
 }

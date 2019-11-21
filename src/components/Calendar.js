@@ -3,10 +3,11 @@ import { Icon, Divider } from '@blueprintjs/core'
 import { DatePicker } from '@blueprintjs/datetime'
 import moment from 'moment'
 import MomentLocaleUtils from 'react-day-picker/moment'
+import { withTranslation } from 'react-i18next'
 
-import { calendarShortcuts } from 'addons/calendar'
+import { calendarShortcuts, minDate, maxDate } from 'addons/calendar'
 
-export default class Calendar extends Component {
+class Calendar extends Component {
   constructor(props) {
     super(props)
 
@@ -23,16 +24,21 @@ export default class Calendar extends Component {
   }
 
   render() {
+    const { t } = this.props
     const { language } = this.state
+
     return (
       <section>
-        <h4 className='bp3-heading'><Icon icon='calendar' iconSize={20} /> Date</h4>
+        <h4 className='bp3-heading'><Icon icon='calendar' iconSize={20} /> {t('labelsApp.toolsHeaders.date')}</h4>
         <Divider />
         <DatePicker
+          selectedDays={new Date()}
           onChange={newDate => this.setState({ selectedDate: moment(newDate).hour(19).minute(0) })}
           highlightCurrentDay={true}
           shortcuts={calendarShortcuts(language)}
           modifiers={{ weekEnds: { daysOfWeek: [0, 6] } }}
+          minDate={minDate()}
+          maxDate={maxDate()}
           dayPickerProps={{
             locale: language,
             fixedWeeks: true,
@@ -44,3 +50,5 @@ export default class Calendar extends Component {
     )
   }
 }
+
+export default withTranslation()(Calendar)

@@ -3,8 +3,9 @@ import { ButtonGroup, Button, Icon, Divider } from '@blueprintjs/core'
 import { TimePicker } from '@blueprintjs/datetime';
 import moment from 'moment'
 import _ from 'lodash'
+import { withTranslation } from 'react-i18next'
 
-export default class Time extends Component {
+class Time extends Component {
   constructor(props) {
     super(props)
 
@@ -26,9 +27,10 @@ export default class Time extends Component {
   }
 
   render() {
+    const { t } = this.props
     return (
       <section>
-        <h4 className='bp3-heading'><Icon icon='time' iconSize={20} /> Time</h4>
+        <h4 className='bp3-heading'><Icon icon='time' iconSize={20} /> {t('labelsApp.toolsHeaders.time')}</h4>
         <Divider />
         <div className='time-presets-wrapper'>
           <div className='time-presets'>
@@ -47,3 +49,5 @@ export default class Time extends Component {
     )
   }
 }
+
+export default withTranslation()(Time)
