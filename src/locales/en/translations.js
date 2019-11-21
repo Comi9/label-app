@@ -3,7 +3,8 @@ export const translationEN = {
     title: 'Labels',
     toolsHeaders: {
       date: 'Date',
-      time: 'Time'
+      time: 'Time',
+      location: 'Location'
     }
   }
 }

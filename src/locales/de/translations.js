@@ -3,7 +3,8 @@ export const translationDE = {
     title: 'Beschriftung',
     toolsHeaders: {
       date: 'Datum',
-      time: 'Zeit'
+      time: 'Zeit',
+      location: 'Standort'
     }
   }
 }
