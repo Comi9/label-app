@@ -19,3 +19,17 @@ export const calendarShortcuts = (locale = DEFAULT_LANGUAGE) => {
     }
   ]
 }
+
+export const minDate = () => {
+  const date = new Date();
+  date.setFullYear(date.getFullYear() - 5);
+  date.setMonth(0, 1);
+  return date;
+}
+
+export const maxDate = () => {
+  const date = new Date();
+  date.setFullYear(date.getFullYear() + 5);
+  date.setMonth(0, 1);
+  return date;
+}

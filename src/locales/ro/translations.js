@@ -1,5 +1,9 @@
 export const translationRO = {
   labelsApp: {
-    'title': 'Etichete',
+    title: 'Etichete',
+    toolsHeaders: {
+      date: 'Dată',
+      time: 'Timp'
+    }
   }
 }
