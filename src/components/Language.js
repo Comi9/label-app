@@ -5,15 +5,15 @@ import _ from 'lodash'
 import i18next from 'i18next'
 
 export default class Language extends Component {
-  switchLanguage(l) {
-    i18next.changeLanguage(l)
-    this.props.actions.switchLanguage(l)
+  switchLanguage(language) {
+    i18next.changeLanguage(language)
+    this.props.actions.switchLanguage(language)
   }
 
   render() {
     return (
       <ButtonGroup className={'application-locales'}>
-        {_.map(LANGUAGES, l => <Button key={l} onClick={() => this.switchLanguage(l)} className={this.props.language === l ? 'bp3-active' : ''}>{l}</Button>)}
+        {_.map(LANGUAGES, language => <Button key={language} onClick={() => this.switchLanguage(language)} className={this.props.language === language ? 'bp3-active' : ''}>{language}</Button>)}
       </ButtonGroup>
     )
   }

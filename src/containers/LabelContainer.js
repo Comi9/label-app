@@ -1,15 +1,13 @@
 import { connect } from 'react-redux'
-import * as appActions from 'actions/appActions'
 import Label from 'components/Label'
 
 const mapStateToProps = state => ({
-  date: state.app.date
+  date: state.app.date,
+  location: state.app.location
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: {
-    getDate: date => dispatch(appActions.getDate(date))
-  }
+  actions: {}
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Label)

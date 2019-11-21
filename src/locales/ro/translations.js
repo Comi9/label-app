@@ -3,7 +3,8 @@ export const translationRO = {
     title: 'Etichete',
     toolsHeaders: {
       date: 'Dată',
-      time: 'Timp'
+      time: 'Timp',
+      location: 'Loc'
     }
   }
 }

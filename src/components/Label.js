@@ -9,6 +9,7 @@ export default class Label extends Component {
     const day = date.format('D')
     const time = date.format('H:mm')
     const isSunday = date.day() === 0
+    const { alias, hall, address } = this.props.location
 
     return (
       <div className='label'>
@@ -20,8 +21,8 @@ export default class Label extends Component {
           <div className='location'>
             <div className='locationIcon'><img src='assets/images/location.svg' alt='location' /></div>
             <div className='locationDetails'>
-              <div className='locationName'><span className='host'>TNRS</span> ● <span className='hall'>Sala Mare</span></div>
-              <div className='locationAddress'>Bvd. Corneliu Coposu, nr. 2</div>
+              <div className='locationName'><span className='host'>{alias}</span> ● <span className='hall'>{hall}</span></div>
+              <div className='locationAddress'>{address}</div>
             </div>
           </div>
         </div>
