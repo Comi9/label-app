@@ -1,7 +1,7 @@
 import moment from 'moment'
 import { DEFAULT_LANGUAGE } from 'addons/languages'
 
-export const DEFAULT_DATE = moment().hour(19).minute(0).second(0)
+export const DEFAULT_DATE = moment().hour(19).minute(0).second(0).locale(DEFAULT_LANGUAGE)
 
 export const calendarShortcuts = (locale = DEFAULT_LANGUAGE) => {
   return [
