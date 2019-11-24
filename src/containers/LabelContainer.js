@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Label from 'components/Label'
+import SVGLabel from 'components/SVGLabel'
 
 const mapStateToProps = state => ({
   date: state.app.date,
@@ -10,4 +10,4 @@ const mapDispatchToProps = dispatch => ({
   actions: {}
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Label)
+export default connect(mapStateToProps, mapDispatchToProps)(SVGLabel)
