@@ -28,6 +28,7 @@ export const translationDE = {
         hall: 'Faust Zimmer',
         address: 'Triajului Straße 1-3'
       }
-    }
+    },
+    eventPresentedBy: 'Präsentiert von'
   }
 }

@@ -28,6 +28,7 @@ export const translationRO = {
         hall: 'Sala Faust',
         address: 'Strada Triajului, nr. 1-3'
       }
-    }
+    },
+    eventPresentedBy: 'Spectacol prezentat de'
   }
 }

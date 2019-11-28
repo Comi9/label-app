@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { defaultPartner } from 'addons/svgAssets'
 import { withTranslation } from 'react-i18next'
 
 class SVGLabel extends Component {
@@ -24,36 +25,10 @@ class SVGLabel extends Component {
     const month = date.format('MMMM')
     const year = date.format('YYYY')
     const time = date.format('H:mm')
-    const isSunday = date.day() === 0
     const alias = t(`labelsApp.availableLocations.${[this.props.location.alias]}.alias`)
     const hall = t(`labelsApp.availableLocations.${[this.props.location.alias]}.hall`)
     const address = t(`labelsApp.availableLocations.${[this.props.location.alias]}.address`)
-    const L = (
-      <div className='label'>
-        <div className='content'>
-          <div className='day'>{dayName.toUpperCase()}</div>
-          <div className='date'>{day}</div>
-          <div className='monthAndYear'><span className='month'>{month.toUpperCase()}</span> <span className='year'>{year}</span></div>
-          <div className='time'><div className='timeIcon'><img src='assets/images/time.svg' alt='time' /></div> {time}</div>
-          <div className='location'>
-            <div className='locationIcon'><img src='assets/images/location.svg' alt='location' /></div>
-            <div className='locationDetails'>
-              <div className='locationName'><span className='host'>{alias}</span> ● <span className='hall'>{hall}</span></div>
-              <div className='locationAddress'>{address}</div>
-            </div>
-          </div>
-        </div>
-        <div className='ornaments'>
-          {
-            isSunday &&
-            <>
-              <div className='partner'>Spectacol prezentat de</div>
-              <div className='partnerLogo'><img src='assets/images/logo_allianz_tiriac.svg' alt='logo_allianz_tiriac' /></div>
-            </>
-          }
-        </div>
-      </div>
-    )
+    const isSunday = date.day() === 0
 
     const S = (
       <svg width='300' height='472.25' viewBox='0 0 300 472.25' id='svg' xmlns="http://www.w3.org/2000/svg">
@@ -102,16 +77,23 @@ class SVGLabel extends Component {
                 h -280
                 a10 10 0 0 1 -10 -10
                 z"
-        fill="#fff"></path>
+          fill="#fff"></path>
 
+        {isSunday && (
+          <>
+            <text x='14' y='444' style={{ fontSize: '10', fontFamily: 'PublicSansBold' }}>{t('labelsApp.eventPresentedBy')}</text>
+            <g transform="translate(130,428)">
+              {defaultPartner}
+            </g>
+          </>
+        )}
       </svg>
     )
 
     return (
       <>
-        {/* {L} */}
         {S}
-        <a href='#' onClick={() => this.saveSvg('test.svg')}>Download</a>
+        {/* <a href='#' onClick={() => this.saveSvg('test.svg')}>Download</a> */}
       </>
     )
   }
