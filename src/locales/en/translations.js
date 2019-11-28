@@ -28,6 +28,7 @@ export const translationEN = {
         hall: 'Faust Hall',
         address: 'Triajului Street 1-3'
       }
-    }
+    },
+    eventPresentedBy: 'Presented by'
   }
 }
