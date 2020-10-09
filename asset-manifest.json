@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/label-app/static/css/main.95e1143e.chunk.css",
+    "main.js": "/label-app/static/js/main.400d221d.chunk.js",
+    "main.js.map": "/label-app/static/js/main.400d221d.chunk.js.map",
+    "runtime-main.js": "/label-app/static/js/runtime-main.886acb7f.js",
+    "runtime-main.js.map": "/label-app/static/js/runtime-main.886acb7f.js.map",
+    "static/css/2.ffdad14c.chunk.css": "/label-app/static/css/2.ffdad14c.chunk.css",
+    "static/js/2.f9aa195a.chunk.js": "/label-app/static/js/2.f9aa195a.chunk.js",
+    "static/js/2.f9aa195a.chunk.js.map": "/label-app/static/js/2.f9aa195a.chunk.js.map",
+    "index.html": "/label-app/index.html",
+    "precache-manifest.2526388bfdc2e4dec1d876d820fe7475.js": "/label-app/precache-manifest.2526388bfdc2e4dec1d876d820fe7475.js",
+    "service-worker.js": "/label-app/service-worker.js",
+    "static/css/2.ffdad14c.chunk.css.map": "/label-app/static/css/2.ffdad14c.chunk.css.map",
+    "static/css/main.95e1143e.chunk.css.map": "/label-app/static/css/main.95e1143e.chunk.css.map",
+    "static/media/index.sass": "/label-app/static/media/icons-20.cef8cdbb.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.886acb7f.js",
+    "static/css/2.ffdad14c.chunk.css",
+    "static/js/2.f9aa195a.chunk.js",
+    "static/css/main.95e1143e.chunk.css",
+    "static/js/main.400d221d.chunk.js"
+  ]
+}
