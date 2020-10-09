@@ -93,7 +93,7 @@ class SVGLabel extends Component {
     return (
       <>
         {S}
-        {/* <a href='#' onClick={() => this.saveSvg('test.svg')}>Download</a> */}
+        <a href='#' onClick={() => this.saveSvg('test.svg')} className='bp3-button bp3-icon-download'>Download</a>
       </>
     )
   }
